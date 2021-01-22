@@ -1,29 +1,31 @@
-class OnlineShop {
-  private orders: any;
-  private offeredProducts: any;
-  private customers: any;
+class Order {
+  public refund() {}
+}
 
-  public addProduct(title: string, price: number) {}
+class Customer {
+  private orders: Order[];
 
-  public updateProduct(productId: string, title: string, price: number) {}
+  constructor(email: string, password: string) {}
 
-  public removeProduct(productId: string) {}
+  public login(email: string, password: string) {}
+
+  public updateProfile(name: string) {}
+
+  public makePurchase(productId: string) {}
+}
+
+class Product {
+  constructor(title: string, price: number) {}
+
+  public update(Id: string, title: string, price: number) {}
+
+  public remove(Id: string) {}
+}
+
+class Inventory {
+  private products: Product;
 
   public getAvailableItems(productId: string) {}
 
   public restockProduct(productId: string) {}
-
-  public createCustomer(email: string, password: string) {}
-
-  public loginCustomer(email: string, password: string) {}
-
-  public makePurchase(customerId: string, productId: string) {}
-
-  public addOrder(customerId: string, productId: string, quantity: number) {}
-
-  public refund(orderId: string) {}
-
-  public updateCustomerProfile(customerId: string, name: string) {}
-
-  // ...
 }
